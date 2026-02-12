@@ -1,1 +1,2 @@
+# requirements.txt
 playwright==1.41.2
