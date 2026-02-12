@@ -201,3 +201,25 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def is_in_stock(page):
+    content = page.content().lower()
+
+    stock_phrases = [
+        "add to basket",
+        "add to cart",
+        "in stock",
+        "pre-order",
+        "preorder"
+    ]
+
+    oos_phrases = [
+        "out of stock",
+        "sold out",
+        "currently unavailable"
+    ]
+
+    if any(p in content for p in stock_phrases) and not any(p in content for p in oos_phrases):
+        return True
+
+    return False
