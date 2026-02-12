@@ -3,7 +3,8 @@ name: Funko Drop Monitor
 on:
   schedule:
     # every 3 minutes
-    - cron: "*/3 * * * *"
+   - cron: "*/2 * * * *"
+
   workflow_dispatch:
 
 jobs:
