@@ -217,10 +217,13 @@ def price_to_float(price_text: str | None) -> float | None:
         return None
 
 def matches_anime_and_hard(title: str) -> bool:
-    t = norm(title)
-    has_anime = any(k in t for k in ANIME_KEYWORDS)
-    has_hard = any(k in t for k in HARD_KEYWORDS)
-    return has_anime and has_hard
+    return True
+
+# def matches_anime_and_hard(title: str) -> bool:
+  #  t = norm(title)
+   # has_anime = any(k in t for k in ANIME_KEYWORDS)
+    #has_hard = any(k in t for k in HARD_KEYWORDS)
+    #return has_anime and has_hard
 
 def stock_status_from_page_html(html_lower: str) -> str:
     """
