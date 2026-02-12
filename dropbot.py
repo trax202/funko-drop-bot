@@ -17,23 +17,60 @@ TARGETS = [
     # GAME animation category
     {"name": "GAME – Pop Animation", "url": "https://www.game.co.uk/funko/pop-animation", "base": "https://www.game.co.uk"},
     # Smyths and HMV are trickier; you can add specific Smyths search pages + HMV preorder pages you care about.
+    # Smyths – Funko search (animation focused)
+    {
+        "name": "Smyths – Funko Search",
+        "url": "https://www.smythstoys.com/uk/en-gb/search?q=funko+pop",
+        "base": "https://www.smythstoys.com"
+    },
+
+    # HMV – Funko Preorders
+    {
+        "name": "HMV – Funko Preorders",
+        "url": "https://hmv.com/store/pop-culture/funko-pre-orders",
+        "base": "https://hmv.com"
+    },
+
+    # HMV – Pop Vinyl Animation Category
+    {
+        "name": "HMV – Pop Vinyl Animation",
+        "url": "https://hmv.com/store/pop-culture/funko/pop-vinyl/animation",
+        "base": "https://hmv.com"
+    }
+
+
 ]
 
 # “Hard / limited” signals (keep these!)
 HARD_KEYWORDS = [
-    "exclusive", "limited", "chase", "convention", "sdcc", "nycc", "glow", "gitd",
-    "flocked", "metallic", "diamond", "special edition", "funko shop", "web exclusive"
+    "exclusive",
+    "limited",
+    "chase",
+    "convention",
+    "sdcc",
+    "nycc",
+    "glow",
+    "gitd",
+    "flocked",
+    "metallic",
+    "diamond",
+    "special edition",
+    "web exclusive"
 ]
+
 
 # “Anime-ish” signals. This is intentionally broad.
 ANIME_KEYWORDS = [
-    "anime", "manga",
-    "one piece", "naruto", "boruto", "bleach", "dragon ball", "dbz", "jujutsu", "jjk",
-    "demon slayer", "kimetsu", "chainsaw", "spy x family", "my hero", "mha", "attack on titan",
-    "aot", "hunter x hunter", "hxh", "black clover", "haikyuu", "jojo", "tokyo ghoul",
-    "sailor moon", "yu-gi-oh", "inuyasha", "fullmetal", "fma", "evangelion", "gundam",
-    "studio ghibli", "ghibli", "pokemon"  # optional: remove if you don’t want it
+    "one piece", "naruto", "boruto", "bleach", "dragon ball", "dbz",
+    "jujutsu", "jjk", "demon slayer", "kimetsu",
+    "chainsaw", "spy x family", "my hero", "mha",
+    "attack on titan", "aot", "hunter x hunter", "hxh",
+    "black clover", "haikyuu", "jojo", "tokyo ghoul",
+    "sailor moon", "yu-gi-oh", "inuyasha",
+    "fullmetal", "fma", "evangelion", "gundam",
+    "ghibli"
 ]
+
 
 STATE_FILE = "state.json"
 
