@@ -89,10 +89,14 @@ def norm(s: str) -> str:
 
 def matches_filters(title: str) -> bool:
     t = norm(title)
+
     has_anime = any(k in t for k in ANIME_KEYWORDS)
     has_hard = any(k in t for k in HARD_KEYWORDS)
-    # If you truly want "all anime", keep has_anime.
-    # If you want *only* limited/hard anime, require both:
+
+    # Prioritise Funko Web Exclusives
+    if "web exclusive" in t or "funko exclusive" in t:
+        return has_anime
+
     return has_anime and has_hard
 
 def send_discord(message: str):
@@ -175,7 +179,24 @@ def main():
             new_items = [i for i in found if i["url"] not in prev_seen]
 
             # Filter to “limited/hard anime”
-            filtered = [i for i in new_items if matches_filters(i["title"])]
+           filtered = []
+
+for item in new_items:
+    if matches_filters(item["title"]):
+        # Open product page to check stock
+        product_page = context.new_page()
+        try:
+            product_page.goto(item["url"], timeout=30000)
+            product_page.wait_for_timeout(1000)
+
+            if is_in_stock(product_page):
+                filtered.append(item)
+
+        except:
+            pass
+
+        product_page.close()
+
 
             if filtered:
                 for i in filtered[:15]:
