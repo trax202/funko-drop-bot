@@ -1,10 +1,10 @@
+# .github/workflows/monitor.yml
 name: Funko Drop Monitor
 
 on:
   schedule:
-    # every 3 minutes
-   - cron: "*/2 * * * *"
-
+    # every 2 minutes (aggressive but usually ok)
+    - cron: "*/2 * * * *"
   workflow_dispatch:
 
 jobs:
